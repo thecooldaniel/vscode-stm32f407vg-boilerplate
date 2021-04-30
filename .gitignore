@@ -1,0 +1,10 @@
+bin/
+temp/
+dump/
+*.elf
+*.bin
+*.hex
+generated.*.ld
+.code-workspace
+.vscode/.cortex*
+.vscode/c_cpp*

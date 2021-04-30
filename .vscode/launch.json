@@ -1,0 +1,19 @@
+//${fileBasenameNoExtension}
+//${fileBasename}
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OpenOCD",
+            "cwd": "${workspaceRoot}",
+            "executable": "${fileWorkspaceFolder}/project/bin/main.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": ["${fileWorkspaceFolder}/vendor/openocd/stm32f407.cfg"],
+            "svdFile": "${fileWorkspaceFolder}/vendor/stmicro/STM32F407.svd",
+            "runToMain": true,
+            "preLaunchTask": "Build Debug",
+        }
+    ]
+}
