@@ -45,6 +45,10 @@ This project is aimed specifically at individuals programming for the STM32F407V
 * `-flto` is added to the gcc flags by default to improve performance [[1](https://kannwischer.eu/papers/2019_nttm4.pdf)]. Depending on the version of gcc you are using, [this may or may not have any effect](https://stackoverflow.com/questions/31688069/requirements-to-use-flto). 
 
 ## FAQ
+**Will this work with the STM32F4xx ?**
+
+Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and you will probably need to switch to the libopencm3 generated `ld` script for your device. (see Note #2 above)
+
 **Can I add source files?**
 
 `main.c` and `main.asm` come pre-configured in the `Makefile`, tasks, and launch settings. If you would like to add more source files, remember to add them to the appropriate entry in the `Makefile`. If you want to change the name `main`, make sure to change all occurences in `tasks.json`, `launch.json`, and the `Makefile`.
