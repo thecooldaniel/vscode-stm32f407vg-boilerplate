@@ -54,4 +54,4 @@ This project is aimed specifically at individuals programming for the STM32F407V
 If you are on Windows 10 and want to use this project, I recommend using [VS Code Remote](https://code.visualstudio.com/docs/remote/remote-overview) and [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). There may be extra configuration involved.
 
 ## References
-1. Leon Botros, Matthias J. Kannwischer, and Peter Schwabe _Memory-Efficient High-Speed Implementation of Kyber on Cortex-M4_, 2019, [https://kannwischer.eu/papers/2019_nttm4.pdf]
+1. Leon Botros, Matthias J. Kannwischer, and Peter Schwabe. _Memory-Efficient High-Speed Implementation of Kyber on Cortex-M4_, 2019, [https://kannwischer.eu/papers/2019_nttm4.pdf]
