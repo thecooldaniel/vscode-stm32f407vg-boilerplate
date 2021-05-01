@@ -14,8 +14,8 @@ This project is aimed specifically at individuals programming for the STM32F407V
 ## Installation
 ### I. Repositories and Folder Structure
 1. Ensure all of the above dependencies are met and their binaries added to your PATH.
-2. Clone this repository
-3. Using the terminal, navigate to the root folder folder and run:
+2. Clone this repository using `--recurse-submodules` i.e. `git clone --recurse-submodules ...`
+3. Alternatively after cloning, using the terminal, navigate to the root folder folder and run:
 ```bash
    git submodule init
    git submodule update
