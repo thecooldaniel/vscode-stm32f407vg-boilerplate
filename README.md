@@ -19,7 +19,7 @@ This project is aimed specifically at individuals programming for the STM32F407V
 2. [The GNU ARM Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm)
 3. [OpenOCD](http://openocd.org/)
    
-### II. Repositories and Folder Structure
+### II. Local Setup
 1. Ensure all of the above dependencies are met and their binaries added to your PATH.
 2. Clone this repository using `--recurse-submodules` i.e. `git clone --recurse-submodules ...`
 3. Alternatively after cloning, using the terminal, navigate to the root folder folder and run:
