@@ -14,7 +14,7 @@ To provide a plug-and-play embedded environment and project boilerplate for low-
 This project is aimed specifically at individuals programming for the STM32F407VG using a flavor of Linux. It is possible to configure this project to work with other microcontrollers (assuming it is supported by [libopencm3](https://github.com/libopencm3/libopencm3)) and/or under Windows, but it is outside the scope of this project.
 
 ## Installation
-## I. Dependencies
+### I. Dependencies
 1. [Visual Studio Code](https://code.visualstudio.com/)
 2. [The GNU ARM Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm)
 3. [OpenOCD](http://openocd.org/)
