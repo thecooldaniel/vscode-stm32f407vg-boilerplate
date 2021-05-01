@@ -1,4 +1,4 @@
-# VS Code STM32F407VG Development Environment and Boilerplate 
+# VS Code STM32F407VG Discovery Development Environment
 
 ## Goal
 To provide a plug-and-play embedded environment and project boilerplate for low-friction startup and continued development using open-source tools on Linux.
