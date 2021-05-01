@@ -72,7 +72,7 @@ If you are on Windows 10 and want to use this project, I recommend using [VS Cod
 * [Marus](https://github.com/Marus) for Cortex-Debug
 * [dseight](https://github.com/dseight) for Disassembly Explorer
 * [dan-c-underwood](https://github.com/dan-c-underwood) for ARM
-* All contributors to the excellent `libopencm3` project
+* All contributors to the excellent [libopencm3](https://github.com/libopencm3/libopencm3) project
 
 ## References
 1. Leon Botros, Matthias J. Kannwischer, and Peter Schwabe. _Memory-Efficient High-Speed Implementation of Kyber on Cortex-M4_, 2019, https://kannwischer.eu/papers/2019_nttm4.pdf
