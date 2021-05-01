@@ -1,5 +1,4 @@
 #include "include/stm32wrapper.h"
-
 #include <stdio.h>
 
 extern uint32_t SignedMod(int32_t number, uint32_t divisor);

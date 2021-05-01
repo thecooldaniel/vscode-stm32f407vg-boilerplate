@@ -3,6 +3,8 @@
 ## Goal
 To provide a plug-and-play embedded environment and project boilerplate for low-friction startup and continued development using open-source tools on Linux.
 
+![Demo](https://imgur.com/a/kWkop1P)
+
 ## Features
 1. Ready-to-go boilerplate. Get started on C/ASM programming immediately!
 2. Breakpoints, watches, and register/DSP inspection via OpenOCD, arm-none-eabi-gdb, and Corext-Debug
