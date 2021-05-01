@@ -4,6 +4,9 @@ dump/
 *.elf
 *.bin
 *.hex
+*.o
+*.out
+*.a
 generated.*.ld
 .code-workspace
 .vscode/.cortex*

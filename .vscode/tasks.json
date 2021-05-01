@@ -6,7 +6,7 @@
         {
             "label": "make main_debug",
             "type": "shell",
-            "command":["make main"],
+            "command":["make main_debug"],
             "options": {
                 "cwd": "project"
             },
@@ -15,7 +15,7 @@
         {
             "label": "dump main_debug",
             "type": "shell",
-            "command": "mkdir -p dump && arm-none-eabi-objdump -d -l main.elf > dump/main.S",
+            "command": "mkdir -p dump && arm-none-eabi-objdump -d -l bin/main.elf > dump/main.S",
             "options": {
                 "cwd": "project"
             },

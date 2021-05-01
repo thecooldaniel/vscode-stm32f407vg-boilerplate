@@ -31,3 +31,5 @@ MEMORY
 
 /* Include the common ld script. */
 INCLUDE cortex-m-generic.ld
+
+/* This script sourced from https://github.com/mupq/nttm4 */

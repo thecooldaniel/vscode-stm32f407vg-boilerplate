@@ -5,7 +5,7 @@
     "disasexpl.useBinaryParsing": true,
     "disasexpl.dimUnusedSourceLines": true,
     "disasexpl.associations": {
-        "**/*.c": "${workspaceFolder}/project/dump/asm_cm3.S",
-        "**/*.s": "${workspaceFolder}/project/dump/asm_cm3.S"
+        "**/*.c": "${workspaceFolder}/project/dump/main.S",
+        "**/*.s": "${workspaceFolder}/project/dump/main.S"
     }
 }
