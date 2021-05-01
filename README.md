@@ -38,6 +38,7 @@ This project is aimed specifically at individuals programming for the STM32F407V
    code --install-extension marus25.cortex-debug
    code --install-extension dseight.disasexpl
 ```
+2. Optional, but recommended: [ARM](https://marketplace.visualstudio.com/items?itemName=dan-c-underwood.arm) (ARM ASM syntax highlighting)
 
 ### IV. Usage
 1. Open the root folder in VS Code
@@ -67,6 +68,7 @@ If you are on Windows 10 and want to use this project, I recommend using [VS Cod
 ## Thanks
 * marus25 for Cortex-Debug
 * dseight for Disassembly Explorer
+* dan-c-underwood for ARM
 * All contributors to the excellent `libopencm3` project
 
 ## References

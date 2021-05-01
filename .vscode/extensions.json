@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "dseight.disasexpl",
-        "marus25.cortex-debug"
+        "marus25.cortex-debug",
+        "dan-c-underwood.arm"
     ]
 }
