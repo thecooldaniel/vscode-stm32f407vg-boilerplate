@@ -65,8 +65,8 @@ Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and 
 If you are on Windows 10 and want to use this project, I recommend using [VS Code Remote](https://code.visualstudio.com/docs/remote/remote-overview) and [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). There may be extra configuration involved.
 
 ## Thanks
-* `marus25` for Cortex-Debug
-* `dseight` for Disassembly Explorer
+* marus25 for Cortex-Debug
+* dseight for Disassembly Explorer
 * All contributors to the excellent `libopencm3` project
 
 ## References
