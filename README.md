@@ -39,7 +39,7 @@ This project is aimed specifically at individuals programming for the STM32F407V
    code --install-extension dseight.disasexpl
 ```
 
-### IIV. Usage
+### IV. Usage
 1. Open the root folder in VS Code
 2. Open `main.c` in-editor
 3. Set a breakpoint
