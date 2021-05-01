@@ -3,7 +3,7 @@
 ## Goal
 To provide a plug-and-play embedded environment and project boilerplate for low-friction startup and continued development using open-source tools on Linux.
 
-![Demo](https://imgur.com/a/kWkop1P)
+![Demo](https://i.imgur.com/UvJKfw6.gif)
 
 ## Features
 1. Ready-to-go boilerplate. Get started on C/ASM programming immediately!
