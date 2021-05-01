@@ -47,7 +47,7 @@ This project is aimed specifically at individuals programming for the STM32F407V
 ## FAQ
 **Will this work with the STM32F4xx ?**
 
-Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and you will probably need to switch to the libopencm3 generated `ld` script for your device. (see Note #2 above)
+Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and you will probably need to switch to the libopencm3 generated `ld` script for your device. (see Note #2 above). You will also need to provide a new `.svd` and make sure to add it to the OpenOCd configuration in `launch.json`.
 
 **Can I add source files?**
 
