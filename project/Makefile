@@ -17,7 +17,6 @@ main_debug: $(INCLUDE)stm32wrapper.o
 main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)stm32wrapper.o
 main_debug: LDSCRIPT = stm32f407vg.ld
 main_debug:
-	@mkdir -p $(BIN)
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
 
 .PHONY: main
@@ -27,7 +26,6 @@ main: $(INCLUDE)stm32wrapper.o
 main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)stm32wrapper.o
 main: LDSCRIPT = stm32f407vg.ld
 main:
-	@mkdir -p $(BIN) 
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
 
 .PHONY: clean
@@ -50,3 +48,5 @@ lib:
 
 include $(OPENCM3_DIR)/mk/genlink-rules.mk
 include $(OPENCM3_DIR)/mk/gcc-rules.mk
+
+$(shell mkdir -p $(BIN))
