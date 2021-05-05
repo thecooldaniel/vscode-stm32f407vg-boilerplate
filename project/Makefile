@@ -3,7 +3,12 @@ OPENCM3_DIR     =../vendor/libopencm3
 INCLUDE			+= include/
 BIN				+= bin/
 DUMP			+= dump/
-CFLAGS          += -DSTM32F4 -DSTM32F4CCM -DSTM32F407VG -I$(OPENCM3_DIR)/include
+CFLAGS          += -I$(OPENCM3_DIR)/include -MD \
+				-flto -std=gnu99 \
+				-Wall -Wextra -Wimplicit-function-declaration \
+				-Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes \
+				-Wundef -Wshadow \
+				-fno-common -MD
 LDFLAGS         = -static -nostartfiles
 LDLIBS          += -Wl,--start-group -lc -lgcc -lnosys -Wl,--end-group
 
@@ -12,25 +17,26 @@ include $(OPENCM3_DIR)/mk/gcc-config.mk
 
 .PHONY: main_debug
 main_debug: clean
-main_debug: CFLAGS += -O0 -g -ggdb3 -flto
-main_debug: $(INCLUDE)stm32wrapper.o
-main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)stm32wrapper.o
+main_debug: CFLAGS += -O0 -g -ggdb3 
+main_debug: $(INCLUDE)hal-stm32f4.o
+main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)hal-stm32f4.o
 main_debug: LDSCRIPT = stm32f407vg.ld
 main_debug:
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
 
 .PHONY: main
 main: clean
-main: CFLAGS += -O3 -flto
-main: $(INCLUDE)stm32wrapper.o
-main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)stm32wrapper.o
+main: CFLAGS += -O3
+main: $(INCLUDE)hal-stm32f4.o
+main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)hal-stm32f4.o
 main: LDSCRIPT = stm32f407vg.ld
 main:
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
+	$(CC) -o $(BIN)main.bin $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
 
 .PHONY: clean
 clean:
-	$(Q)$(RM) -rf $(BIN)*.bin $(BIN)*.elf $(INCLUDE)*.o $(BIN)**.hex $(BIN)**.d $(DUMP)/*.*
+	$(Q)$(RM) -rf $(BIN)*.bin $(BIN)*.elf $(INCLUDE)*.o $(BIN)**.hex $(BIN)**.d $(DUMP)*.*
 
 .PHONY: lib
 lib:
