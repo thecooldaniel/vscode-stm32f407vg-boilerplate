@@ -7,7 +7,7 @@ To provide a plug-and-play embedded environment and project boilerplate for low-
 
 ## Features
 1. Ready-to-go boilerplate. Get started on C/ASM programming immediately!
-2. Breakpoints, watches, and register/DSP inspection via OpenOCD, arm-none-eabi-gdb, and Corext-Debug
+2. Breakpoints, watches, and register/DSP inspection via OpenOCD, arm-none-eabi-gdb, and Cortex-Debug
 3. Quickly and easily compare source C/ASM lines with the compiled output via Disassembly Explorer
 
 ## Intended Audience
