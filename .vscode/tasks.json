@@ -6,7 +6,9 @@
         {
             "label": "make main_debug",
             "type": "shell",
-            "command":["make main_debug"],
+            "command": [
+                "make main_debug"
+            ],
             "options": {
                 "cwd": "project"
             },
@@ -23,8 +25,20 @@
         },
         {
             "label": "Build Debug",
-            "dependsOn": ["make main_debug", "dump main_debug"],
+            "dependsOn": [
+                "make main_debug",
+                "dump main_debug"
+            ],
             "dependsOrder": "sequence"
+        },
+        {
+            "label": "Flash with OpenOCD",
+            "type": "shell",
+            "command": [
+                "openocd -f board/stm32f4discovery.cfg -c \"program bin/main.elf verify reset exit\""
+            ],
+            "options": {"cwd": "project"},
+            "problemMatcher": []
         }
     ]
 }
