@@ -64,9 +64,9 @@ Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and 
 
 `main.c` and `main.asm` come pre-configured in the `Makefile`, tasks, and launch settings. If you would like to add more source files, remember to add them to the appropriate entry in the `Makefile`. If you want to change the name `main`, make sure to change all occurences in `tasks.json`, `launch.json`, and the `Makefile`.
    
-**Can I use this on Windows?**
+**Can I use this on Windows / macOS?**
 
-If you are on Windows 10 and want to use this project, I recommend using [VS Code Remote](https://code.visualstudio.com/docs/remote/remote-overview) and [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). There may be extra configuration involved.
+I recommend running Linux in a virtual machine then opening a remote session into it using [VSCode Remove Development](https://code.visualstudio.com/docs/remote/remote-overview). Make sure to pass all the relevant USB devices for your device into the guest. 
 
 ## Thanks
 * [Marus](https://github.com/Marus) for Cortex-Debug
