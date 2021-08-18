@@ -66,7 +66,7 @@ Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and 
    
 **Can I use this on Windows / macOS?**
 
-I recommend running Linux in a virtual machine then opening a remote session into it using [VSCode Remove Development](https://code.visualstudio.com/docs/remote/remote-overview). Make sure to pass all the relevant USB devices for your device into the guest. 
+I recommend running Linux in a virtual machine then opening a remote session into it using [VSCode Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Make sure to pass all the relevant USB devices for your device into the guest. 
 
 ## Thanks
 * [Marus](https://github.com/Marus) for Cortex-Debug
