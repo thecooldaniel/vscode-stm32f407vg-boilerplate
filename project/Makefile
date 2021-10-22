@@ -19,7 +19,8 @@ include $(OPENCM3_DIR)/mk/gcc-config.mk
 main_debug: clean
 main_debug: CFLAGS += -O0 -g -ggdb3 
 main_debug: $(INCLUDE)hal-stm32f4.o
-main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)hal-stm32f4.o
+main_debug: $(INCLUDE)randombytes.o
+main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)x25519/curve25519-m4f-ptrswap-gcc-minified.s $(INCLUDE)x25519/x25519-cortex-m4-gcc.s  $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
 main_debug: LDSCRIPT = stm32f407vg.ld
 main_debug:
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
@@ -28,7 +29,8 @@ main_debug:
 main: clean
 main: CFLAGS += -O3
 main: $(INCLUDE)hal-stm32f4.o
-main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)hal-stm32f4.o
+main: $(INCLUDE)randombytes.o
+main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)x25519/x25519-cortex-m4-gcc.s $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
 main: LDSCRIPT = stm32f407vg.ld
 main:
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)
