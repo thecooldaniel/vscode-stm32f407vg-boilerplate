@@ -30,7 +30,7 @@ main: clean
 main: CFLAGS += -O3
 main: $(INCLUDE)hal-stm32f4.o
 main: $(INCLUDE)randombytes.o
-main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)x25519/x25519-cortex-m4-gcc.s $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
+main: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)x25519/curve25519-m4f-ptrswap-gcc-minified.s $(INCLUDE)x25519/x25519-cortex-m4-gcc.s $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
 main: LDSCRIPT = stm32f407vg.ld
 main:
 	$(CC) -o $(BIN)main.elf $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS) -T$(LDSCRIPT) $(ARCH_FLAGS)

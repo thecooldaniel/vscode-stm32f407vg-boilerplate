@@ -532,7 +532,8 @@ fe25519_sqr_many_fpu:
 // out: r0-r7
 // cycles: 22
 loadm:
-	ldr r0,[r1,#0] // loads every other word
+    // tried converting ldr to ldrd, its no faster
+	ldr r0,[r1,#0] // Skips the word between #0 and #8
 	ldr r2,[r1,#8]
 	ldr r3,[r1,#12]
 	ldr r4,[r1,#16]
@@ -557,7 +558,7 @@ curve25519_scalarmult_fpu:
 	//frame address sp,40
 	
 	mov r10,r2
-	bl loadm
+	bl loadm    // Somehow leaving these BLs saves thousands of cycles
 	
 	and r0,r0,#0xfffffff8
 	//and r7,r7,#0x7fffffff not needed since we don't inspect the msb anyway
@@ -567,19 +568,30 @@ curve25519_scalarmult_fpu:
 	mov r8,#0
 	
 	//ldm r1,{r0-r7}
-    ldr r0,[r10,#0] // loads every other word
-	ldr r2,[r10,#8]
-	ldr r3,[r10,#12]
-	ldr r4,[r10,#16]
-	ldr r5,[r10,#20]
-	ldr r6,[r10,#24]
-	ldr r7,[r10,#28]
-	ldr r1,[r10,#4]
-	@ mov r1,r10
-	@ bl loadm
-	
+	mov r1,r10
+    sub sp, #36
+	@ bl loadm // Somehow leaving these BLs saves thousands of cycles
+    ldr r7,[r1,#28]
 	and r7,r7,#0x7fffffff
-	push {r0-r8}
+    ldr r0,[r1,#0] // Skips the word between #0 and #8
+	ldr r2,[r1,#8]
+	ldr r3,[r1,#12]
+	ldr r4,[r1,#16]
+	ldr r5,[r1,#20]
+	ldr r6,[r1,#24]
+	@ ldr r7,[r1,#28]
+	ldr r1,[r1,#4]
+    
+
+	@ push {r0-r8}
+
+   
+    strd r7,r8,[sp, #28]
+    strd r5,r6,[sp, #20]
+    strd r3,r4,[sp, #12]
+    strd r1,r2,[sp, #4]
+    str  r0,   [sp, #0]
+
 	//frame address sp,108
 	
 	movs r9,#1

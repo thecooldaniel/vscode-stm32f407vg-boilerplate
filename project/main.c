@@ -101,6 +101,7 @@ int main(void) {
     t_nofpu = t2 - t1;
 
 	t1 = hal_get_time();
+	// 476374
 	curve25519_scalarmult_fpu(shared_secret_bob, secret_key_alice, secret_key_bob);
 	t2 = hal_get_time();
 	t_withfpu = t2 - t1;
@@ -116,12 +117,16 @@ int main(void) {
 	hal_send_str("\n##############################\n");
 	hal_send_str(str);
 	hal_send_str("\n##############################\n");
+	uint64_t num_correct = 0;
 	for(int i = 0; i < 32; i++) {
 		if(shared_secret_alice[i] == shared_secret_bob[i]) {
-		
-			hal_send_str("yes");
+			num_correct++;
+			// hal_send_str("yes");
 		}
 	}
+	hal_send_str("Number of matches:\n");
+	uint64_to_str(str, num_correct);
+	hal_send_str(str);
 
 	// if (memcmp(shared_secret_alice, shared_secret_bob, 32) == 0) {
 	// 	puts("SUCCESS: Both Bob and Alice computed the same shared secret");
