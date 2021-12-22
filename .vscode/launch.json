@@ -4,6 +4,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "OpenOCD External/Semihosting",
+            "cwd": "${workspaceRoot}",
+            "executable": "${fileWorkspaceFolder}/project/bin/main.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "external",
+            "gdbTarget": "localhost:3333",
+            "configFiles": ["${fileWorkspaceFolder}/vendor/openocd/stm32f407.cfg"],
+            "svdFile": "${fileWorkspaceFolder}/vendor/stmicro/STM32F407.svd",
+            "runToMain": true,
+            "preLaunchTask": "Build Debug",
+            "preLaunchCommands": ["monitor arm semihosting enable"]
+        },
+        {
             "name": "OpenOCD",
             "cwd": "${workspaceRoot}",
             "executable": "${fileWorkspaceFolder}/project/bin/main.elf",
@@ -13,7 +27,7 @@
             "configFiles": ["${fileWorkspaceFolder}/vendor/openocd/stm32f407.cfg"],
             "svdFile": "${fileWorkspaceFolder}/vendor/stmicro/STM32F407.svd",
             "runToMain": true,
-            "preLaunchTask": "Build Debug",
+            "preLaunchTask": "Build Debug"
         }
     ]
 }
