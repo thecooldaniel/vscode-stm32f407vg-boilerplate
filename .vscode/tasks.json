@@ -12,7 +12,16 @@
             "options": {
                 "cwd": "${workspaceRoot}/project"
             },
-            "group": "build"
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false,
+                "group": "main_view"
+            }
         },
         {
             "label": "dump main_debug",
@@ -21,7 +30,30 @@
             "options": {
                 "cwd": "${workspaceRoot}/project"
             },
-            "group": "build"
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "External OpenOCD",
+            "type": "shell",
+            "command":["openocd -f board/stm32f4discovery.cfg"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": true,
+                "group": "main_view"
+            }
         },
         {
             "label": "Build Debug",

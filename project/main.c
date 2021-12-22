@@ -1,13 +1,17 @@
-#include "include/hal.h"
-#include "include/randombytes.h"
-
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
+#include "include/hal.h"
+#include "include/randombytes.h"
 
 // #include <fcntl.h>
 // #include <errno.h>
 // #include <unistd.h>
+
+int main(void)
+{
+    hal_setup(CLOCK_BENCHMARK);
 
 #include "include/x25519/x25519-cortex-m4.h"
 

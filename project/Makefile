@@ -8,16 +8,20 @@ CFLAGS          += -I$(OPENCM3_DIR)/include -MD \
 				-Wall -Wextra -Wimplicit-function-declaration \
 				-Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes \
 				-Wundef -Wshadow \
-				-fno-common -MD
+				-fno-common -MD \
+				--specs=nosys.specs --specs=nano.specs
+				
 LDFLAGS         = -static -nostartfiles
 LDLIBS          += -Wl,--start-group -lc -lgcc -lnosys -Wl,--end-group
-
+#-lrdimon
 include $(OPENCM3_DIR)/mk/genlink-config.mk
 include $(OPENCM3_DIR)/mk/gcc-config.mk
 
 .PHONY: main_debug
 main_debug: clean
 main_debug: CFLAGS += -O0 -g -ggdb3 
+# Below line enables semihosting. Do not include this in the release build!
+main_debug: CFLAGS += --specs=rdimon.specs -lc -lrdimon
 main_debug: $(INCLUDE)hal-stm32f4.o
 main_debug: $(INCLUDE)randombytes.o
 main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)x25519/curve25519-m4f-ptrswap-gcc-minified.s $(INCLUDE)x25519/x25519-cortex-m4-gcc.s  $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
