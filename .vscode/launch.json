@@ -13,9 +13,10 @@
             "gdbTarget": "localhost:3333",
             "configFiles": ["${fileWorkspaceFolder}/vendor/openocd/stm32f407.cfg"],
             "svdFile": "${fileWorkspaceFolder}/vendor/stmicro/STM32F407.svd",
-            "runToMain": true,
+            "runToEntryPoint": "main",
             "preLaunchTask": "Build Debug",
-            "preLaunchCommands": ["monitor arm semihosting enable"]
+            "preLaunchCommands": ["monitor arm semihosting enable", "monitor arm semihosting_fileio enable"],
+            // "showDevDebugOutput": "raw"
         },
         {
             "name": "OpenOCD",
@@ -26,7 +27,7 @@
             "servertype": "openocd",
             "configFiles": ["${fileWorkspaceFolder}/vendor/openocd/stm32f407.cfg"],
             "svdFile": "${fileWorkspaceFolder}/vendor/stmicro/STM32F407.svd",
-            "runToMain": true,
+            "runToEntryPoint": "main",
             "preLaunchTask": "Build Debug"
         }
     ]
