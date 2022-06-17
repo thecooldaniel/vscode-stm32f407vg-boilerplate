@@ -47,8 +47,10 @@ This project is aimed specifically at individuals programming for the STM32F407V
 1. Open the root folder in VS Code
 2. Open `main.c` in-editor
 3. Set a breakpoint
-4. Hit F5, debugging should begin!
-5. Hit F1 and type 'Disassembly explorer' until the 'Show' option is available. Select it to compare source and compilation side-by-side. Note: You will need to execute this command for each source file you wish to compare.
+4. PREFERED: Start OpenOCD in an external terminal with 'openocd -f board/stm32f4discovery.cfg'
+   * Alternatively, change the debug type from 'OpenOCD External' to 'OpenOCD' in the VSCode debug view.
+5. Hit F5, debugging should begin!
+6. Hit F1 and type 'Disassembly explorer' until the 'Show' option is available. Select it to compare source and compilation side-by-side. Note: You will need to execute this command for each source file you wish to compare.
 
 ## Notes
 * The amount of available memory exposed to the compiler via the linker script is reduced from 128 KiB to 112 KiB to force the stack into SRAM1. Access to SRAM2 is slower and negatively impacts performance. [[1](https://kannwischer.eu/papers/2019_nttm4.pdf)]
