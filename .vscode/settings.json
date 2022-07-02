@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "stm32wrapper.h": "c"
+        "stm32wrapper.h": "c",
+        "stdio.h": "c"
     },
     "disasexpl.useBinaryParsing": true,
     "disasexpl.dimUnusedSourceLines": true,
@@ -9,5 +10,5 @@
         "**/*.s": "${workspaceFolder}/project/dump/main.S"
     },
     "cortex-debug.registerUseNaturalFormat": false,
-    "cortex-debug.variableUseNaturalFormat": false
+    "cortex-debug.variableUseNaturalFormat": true
 }
