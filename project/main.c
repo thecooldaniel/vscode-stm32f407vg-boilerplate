@@ -12,6 +12,8 @@ int main(void) {
 	initialise_monitor_handles();
     hal_setup(CLOCK_BENCHMARK);
 
+	/* START CODE HERE */
+
 	/* Test ASM */
 	uint32_t m = SignedMod(-10, 3);
     uint32_t m2 = UnsignedMod(538, 7);
