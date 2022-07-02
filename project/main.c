@@ -12,13 +12,13 @@ int main(void) {
 	#ifdef SEMIHOSTING
 		initialise_monitor_handles();
 	#endif
-    hal_setup(CLOCK_BENCHMARK);
+	hal_setup(CLOCK_BENCHMARK);
 
 	/* START CODE HERE */
 
 	/* Test ASM */
 	uint32_t m = SignedMod(-10, 3);
-    uint32_t m2 = UnsignedMod(538, 7);
+	uint32_t m2 = UnsignedMod(538, 7);
 
 	/* Test randombytes */
 	unsigned char rb[32];
