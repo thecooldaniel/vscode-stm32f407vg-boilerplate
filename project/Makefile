@@ -4,12 +4,11 @@ INCLUDE			+= include/
 BIN				+= bin/
 DUMP			+= dump/
 CFLAGS          += -I$(OPENCM3_DIR)/include -MD \
-				-flto -std=gnu99 \
+				-std=gnu99 \
 				-Wall -Wextra -Wimplicit-function-declaration \
 				-Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes \
 				-Wundef -Wshadow \
 				-fno-common -MD \
-				--specs=nosys.specs --specs=nano.specs
 				
 LDFLAGS         = -static -nostartfiles
 LDLIBS          += -Wl,--start-group -lc -lgcc -lnosys -Wl,--end-group
@@ -19,8 +18,9 @@ include $(OPENCM3_DIR)/mk/gcc-config.mk
 
 .PHONY: main_debug
 main_debug: clean
-main_debug: CFLAGS += -O0 -g -ggdb3 
+main_debug: CFLAGS += -O0 -g -ggdb3 -I$(INCLUDE) -flto
 # Below line enables semihosting. Do not include this in the release build!
+main_debug: CFLAGS += --specs=nosys.specs --specs=nano.specs
 main_debug: CFLAGS += --specs=rdimon.specs -lc -lrdimon
 main_debug: $(INCLUDE)hal-stm32f4.o
 main_debug: $(INCLUDE)randombytes.o

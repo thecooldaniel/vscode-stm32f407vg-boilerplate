@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "stm32wrapper.h": "c"
+        "stm32wrapper.h": "c",
+        "stdio.h": "c"
     },
     "disasexpl.useBinaryParsing": true,
     "disasexpl.dimUnusedSourceLines": true,

@@ -13,3 +13,4 @@ generated.*.ld
 .vscode/.cortex*
 .vscode/c_cpp*
 .bank
+semihosting_test.txt
