@@ -10,5 +10,5 @@
         "**/*.s": "${workspaceFolder}/project/dump/main.S"
     },
     "cortex-debug.registerUseNaturalFormat": false,
-    "cortex-debug.variableUseNaturalFormat": true
+    "cortex-debug.variableUseNaturalFormat": false
 }
