@@ -9,7 +9,9 @@
 
 int main(void) {
 
-	initialise_monitor_handles();
+	#ifdef SEMIHOSTING
+		initialise_monitor_handles();
+	#endif
     hal_setup(CLOCK_BENCHMARK);
 
 	/* START CODE HERE */

@@ -19,9 +19,12 @@ include $(OPENCM3_DIR)/mk/gcc-config.mk
 .PHONY: main_debug
 main_debug: clean
 main_debug: CFLAGS += -O0 -g -ggdb3 -I$(INCLUDE) -flto
-# Below line enables semihosting. Do not include this in the release build!
+# Below lines enable semihosting. Do not include this in the release build!
+# START SEMIHOSTING
 main_debug: CFLAGS += --specs=nosys.specs --specs=nano.specs
 main_debug: CFLAGS += --specs=rdimon.specs -lc -lrdimon
+main_debug: CFLAGS += -DSEMIHOSTING=1
+# END SEMIHOSTING
 main_debug: $(INCLUDE)hal-stm32f4.o
 main_debug: $(INCLUDE)randombytes.o
 main_debug: OBJS = main.c $(INCLUDE)main.s $(INCLUDE)hal-stm32f4.o $(INCLUDE)randombytes.o
