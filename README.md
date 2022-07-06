@@ -58,9 +58,9 @@ This project is aimed specifically at individuals programming for the STM32F407V
 * `-flto` is added to the gcc flags by default to improve performance [[1](https://kannwischer.eu/papers/2019_nttm4.pdf)]. Depending on the version of gcc you are using, [this may or may not have any effect](https://stackoverflow.com/questions/31688069/requirements-to-use-flto). 
 
 ## FAQ
-**Will this work with the STM32F4xx ?**
+**Will this work with <MY_DEVICE> ?**
 
-Maybe! Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and you will probably need to switch to the libopencm3 generated `ld` script for your device. (see Note #2 above). You will also need to provide a new `.svd` and make sure to add it to the OpenOCD configuration in `launch.json`.
+Maybe! Technically any device supported by `libopencm3` should work. Change the `DEVICE` variable in the `Makefile`, update the `CFLAGS`, and you will probably need to switch to the libopencm3 generated `ld` script for your device. (see Note #2 above). You will also need to provide a new `.svd` and make sure to add it to the OpenOCD configuration in `launch.json`.
 
 **Can I add source files?**
 
